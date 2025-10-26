@@ -1,0 +1,25 @@
+$primary-color: #141c2d;
+$gradient: linear-gradient(to right, #ae88f0, #61a2d8);
+$gradient-reverse: linear-gradient(to bottom, #61a2d8, #ae88f0);
+$light-text: #dce3f1;
+$dark-text: #1a1a1a;
+
+$font-title: 'IBM Plex Sans', sans-serif;
+$font-text: 'Onest', sans-serif;
+$font-button: 'Raleway';
+
+
+
+@function Rem($pixels, $base: 16px) {
+   @return calc($pixels / $base) * 1rem;
+}
+
+$SMALLMOBILE: 481px;
+$MOBILE: 768px;
+$TABLET: 1024px;
+$DESKTOP: 1440px;
+
+$small-mobile-rem: Rem($SMALLMOBILE);
+$mobile-rem: Rem($MOBILE);
+$tablet-rem: Rem($TABLET);
+$desktop-rem: Rem($DESKTOP);

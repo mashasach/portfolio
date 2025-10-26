@@ -1,0 +1,9 @@
+@use './mixins' as*;
+@use '/src/styles/fonts.scss';
+
+
+.container {
+  max-width: toRem(1200);
+  margin: 0 auto;
+  padding: 0 toRem(25);
+}

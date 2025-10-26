@@ -1,0 +1,57 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.resume {
+   background: $primary-color;
+   min-height: 100vh;
+
+   &__container {
+      padding-block: 30px;
+   }
+
+   &__title {
+      padding-top: toRem(20);
+
+      @media (min-width:$tablet-rem) {
+         padding-top: toRem(70);
+      }
+   }
+
+   &__header {
+      display: flex;
+      height: toRem(100);
+      align-items: center;
+      color: $light-text;
+      flex-direction: column;
+      padding: toRem(20);
+      justify-content: center;
+      gap: toRem(20);
+
+      @media (min-width:$tablet-rem) {
+         flex-direction: row;
+         padding: 0;
+         justify-content: space-between;
+      }
+   }
+
+   &__to-home {
+      font-family: "Raleway";
+      display: flex;
+      gap: toRem(10);
+      align-items: center;
+
+
+      @media (min-width:$tablet-rem) {
+         padding-bottom: 0;
+      }
+   }
+
+   &__pdf-wrapper {
+      background-color: white;
+   }
+
+   &__pdf {
+      padding-block: toRem(60);
+   }
+
+}

@@ -1,0 +1,44 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.qualities {
+   font-family: $font-text;
+
+   &__title {
+      @include adaptiveValue("padding-top", 60, 40);
+      text-align: right;
+      display: block;
+
+   }
+
+   &__title-wrapper {
+      padding-right: 22%;
+   }
+
+   &__slider-wrapper {
+      max-width: toRem(270);
+      margin: 0 auto;
+      padding-block: toRem(50);
+
+      @media (min-width: $mobile-rem) {
+         max-width: toRem(500);
+      }
+
+      @media (min-width: $tablet-rem) {
+         max-width: toRem(900);
+      }
+   }
+
+   &__slider {
+      //  color: #ffffff;
+      color: $light-text;
+   }
+
+   &__slider-background {
+      background: $primary-color;
+      border-top-left-radius: 50% 20%;
+      border-top-right-radius: 50% 20%;
+      @include adaptiveValue("padding-block", 50, 5);
+
+   }
+}

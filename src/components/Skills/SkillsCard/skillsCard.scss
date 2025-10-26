@@ -1,0 +1,22 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.skills {
+   &__card {
+      max-width: toRem(350);
+      background: white;
+      width: 100%;
+      border-radius: 20px;
+      @include adaptiveValue("padding", 22, 10);
+      @include adaptiveValue("margin-bottom", 25, 0);
+
+
+   }
+
+   &__title {
+      font-weight: 600;
+      padding-bottom: toRem(15);
+
+   }
+
+}

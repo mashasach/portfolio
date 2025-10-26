@@ -1,0 +1,100 @@
+@use '@/styles/mixins' as*;
+@use '@/styles/variables';
+
+.about {
+   color: $dark-text;
+
+
+   &__container {
+      font-family: $font-text;
+      font-weight: 400;
+      display: flex;
+      gap: toRem(60);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      min-height: 100vh;
+      @include adaptiveValue("padding-block", 40, 20);
+
+
+      @media (min-width: $mobile-rem) {
+         flex-direction: row;
+         @include adaptiveValue("gap", 70, 10);
+         padding-top: 0;
+         @include adaptiveValue("padding-block", 40, 20);
+      }
+
+      @media (min-aspect-ratio: 1.7 / 1) {
+         flex-direction: row;
+      }
+   }
+
+   &__img-wrapper {
+
+      aspect-ratio: 331 / 425;
+      min-width: toRem(200);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      max-width: 30vw;
+
+      &::after {
+         content: "";
+         position: absolute;
+         background: variables.$gradient;
+         left: -10%;
+         top: -10%;
+         width: 90%;
+         height: 120%;
+         z-index: -1;
+
+      }
+
+      @media (min-width: $mobile-rem) {
+         flex: 1 1 45%;
+         max-width: toRem(360);
+
+         &::after {
+            content: "";
+            position: absolute;
+            background: variables.$gradient;
+            left: -10%;
+            top: -14%;
+            width: 90%;
+            height: 128%;
+            z-index: -1;
+
+         }
+      }
+   }
+
+   &__img {
+      border-radius: 30px;
+      width: 100%;
+      object-fit: cover;
+   }
+
+   &__info {
+
+      max-width: toRem(600);
+
+      p {
+         font-family: 'Raleway';
+         font-weight: 400;
+         font-style: normal;
+         line-height: toRem(30);
+         @include adaptiveValue("font-size", 18, 16);
+         @include adaptiveValue("margin-bottom", 20, 10);
+      }
+
+      >*:last-child {
+         margin-bottom: 0;
+      }
+
+      @media (min-width: $mobile-rem) {
+         flex: 1 1 auto;
+      }
+   }
+
+}

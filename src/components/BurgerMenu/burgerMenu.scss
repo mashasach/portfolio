@@ -1,0 +1,59 @@
+@use '@/styles/mixins' as*;
+
+.header__menu-btn {
+   height: 32px;
+   width: 40px;
+   cursor: pointer;
+
+   & span,
+   span::before,
+   span::after {
+      background: rgb(255, 255, 255);
+      border-radius: 3px;
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 4px;
+      margin-top: toRem(13);
+
+      -webkit-transition: .3s ease-in-out;
+      -moz-transition: .3s ease-in-out;
+      -o-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+
+   }
+
+   & span::before {
+      margin-top: toRem(-12);
+   }
+
+   & span::after {
+      margin-top: toRem(12);
+   }
+
+   &--active span {
+      background: transparent;
+   }
+
+   &--active span::before {
+      margin-top: 0;
+
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+   }
+
+   &--active span::after {
+      margin-top: 0;
+
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+   }
+
+   @media (min-width: $mobile-rem) {
+      display: none;
+   }
+}

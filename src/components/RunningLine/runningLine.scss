@@ -1,0 +1,15 @@
+@use '@/styles/mixins' as*;
+
+.running {
+   &__items {
+      border-bottom: 1px solid #cecece;
+   }
+
+   &__item {
+      padding: toRem(15);
+      font-family: 'Raleway';
+      font-weight: 300;
+      font-size: toRem(16);
+   }
+
+}

@@ -1,0 +1,67 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.project {
+
+   &__card {
+      // max-width: toRem(300);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      overflow: hidden;
+
+      &:hover {
+         transform: translateY(-10px)
+      }
+
+      &:hover .project__arrow {
+         animation: arrow-bounce 0.4s ease;
+      }
+
+
+
+      @media(min-width: toRem(1025)) {
+         background: #ffffff;
+      }
+
+   }
+
+   &__description {
+      padding: toRem(10);
+
+   }
+
+   &__img {
+      object-fit: cover;
+      aspect-ratio: 300 / 200;
+      cursor: pointer;
+      transition: all 0.5s ease;
+
+   }
+
+   &__arrow-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      padding: toRem(10);
+   }
+}
+
+@keyframes arrow-bounce {
+   0% {
+      transform: translateX(0);
+   }
+
+   50% {
+      transform: translateX(5px);
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+
+
+   // назад
+}

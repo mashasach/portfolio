@@ -1,0 +1,44 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.section-title {
+   position: relative;
+   font-family: 'IBM Plex Sans';
+   font-weight: 500;
+   @include adaptiveValue("font-size", 35, 28);
+   color: $light-text;
+   @include adaptiveValue("margin-bottom", 55, 40);
+   text-align: center;
+   text-transform: uppercase;
+
+   &--background {
+      display: inline-block;
+      @include adaptiveValue("margin-bottom", 70, 30);
+      color: $dark-text;
+
+      &::after {
+         content: "";
+         position: absolute;
+         background: linear-gradient(to right, #ae88f0, #61a2d8);
+         z-index: -1;
+         left: 16%;
+         top: 23px;
+         height: 50%;
+         width: 115%;
+         opacity: 0.6
+      }
+
+      &::after {
+         @media (min-width: $mobile-rem) {
+            width: 135%;
+            font-size: toRem(40);
+            top: 30px;
+            height: 60%;
+         }
+      }
+
+   }
+
+
+
+}

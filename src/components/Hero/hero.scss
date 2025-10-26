@@ -1,0 +1,106 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.hero {
+   min-height: 100vh;
+   background-color: variables.$primary-color;
+   font-family: $font-title;
+   font-weight: 500;
+   width: 100%;
+
+
+   &__container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: toRem(80);
+      @include adaptiveValue("gap", 20, 10);
+
+      @media (min-width: $mobile-rem) {
+         flex-direction: row;
+         padding-top: toRem(100);
+      }
+
+      @media (min-aspect-ratio: 1.7 / 1) {
+         flex-direction: row;
+      }
+
+   }
+
+   &__info {
+      color: $light-text;
+      justify-items: flex-start;
+      padding-bottom: 10px;
+
+      @media (min-width: $mobile-rem) {
+         flex: 1 1 auto;
+      }
+
+      >* {
+         @include adaptiveValue("margin-bottom", 20, 14);
+      }
+
+      >*:last-child {
+         margin-bottom: 0;
+         @include adaptiveValue("margin-top", 30, 20);
+
+      }
+   }
+
+   &__greeting,
+   &__name {
+      font-weight: 500;
+      text-transform: uppercase;
+      @include adaptiveValue("font-size", 30, 16);
+   }
+
+   &__position {
+      @include adaptiveValue("font-size", 55, 24);
+      font-weight: 500;
+      text-transform: uppercase;
+      background: variables.$gradient;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+
+   }
+
+   &__avatar {
+      border-radius: 50%;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: scale 0.5s;
+
+
+      &-wrapper {
+         max-width: 40svh;
+         border: 3px solid #ffffff;
+         border-radius: 50%;
+         aspect-ratio: 1 / 1;
+         @include adaptiveValue("padding", 12, 5);
+
+
+
+         @media (min-width: $mobile-rem) {
+            max-width: 70svh;
+            flex: 1 1 33.3%;
+         }
+
+         @media (min-aspect-ratio: 1 / 2) and (max-width: $small-mobile-rem) {
+            max-width: 30svh;
+         }
+
+
+      }
+
+   }
+
+   @media (min-width: $mobile-rem) {
+      padding-top: 0;
+   }
+
+}

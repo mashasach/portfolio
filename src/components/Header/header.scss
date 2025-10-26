@@ -1,0 +1,130 @@
+@use '@/styles/variables';
+@use '@/styles/mixins' as*;
+
+.header {
+   font-family: $font-text;
+   font-weight: 400;
+   height: toRem(80);
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   transition: 0.6s ease;
+   z-index: 99999;
+   background-color: rgba(20, 28, 45, 0.9607843137);
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+   }
+
+   &__menu {
+      background-color: rgb(20 28 45);
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      right: 0;
+      overflow: auto;
+      transition: left 0.3s;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      &--active {
+         left: 0;
+      }
+
+      @media (min-width: $mobile-rem) {
+         background-color: transparent;
+         position: relative;
+         height: auto;
+         left: 0;
+         overflow: hidden;
+         transition: none;
+         display: block;
+         width: auto;
+
+
+
+      }
+
+
+
+      &-list {
+         display: block;
+
+         @media (min-width: $mobile-rem) {
+            display: flex;
+            gap: toRem(25);
+         }
+      }
+
+      &-item {
+
+         padding: toRem(16) 0;
+
+         @media (min-width: $mobile-rem) {
+            padding: 0;
+         }
+      }
+
+      &-link {
+         font-size: toRem(36);
+         cursor: pointer;
+         color: variables.$light-text;
+         position: relative;
+
+         &:hover {
+            color: variables.$light-text;
+         }
+
+         &::after {
+            content: "";
+            width: 0;
+            height: 0.8px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transition: width 0.5s, left 0.5s;
+         }
+
+         @media (any-hover:hover) {
+            &:hover {
+               &::after {
+                  left: 0;
+                  width: 100%;
+
+               }
+            }
+         }
+
+         @media (min-width: $mobile-rem) {
+            font-size: toRem(16);
+         }
+      }
+   }
+
+   @media (min-width: $mobile-rem) {
+
+      height: toRem(100);
+      background-color: transparent;
+
+      &--scrolled {
+         //  padding-top: toRem(25);
+         height: toRem(70);
+         background-color: #141c2df5;
+      }
+
+
+   }
+}
+
+body.menu-open {
+   overflow: hidden;
+}
