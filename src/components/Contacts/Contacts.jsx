@@ -5,6 +5,8 @@ import contactsImg from '../../assets/images/contactsImg.webp'
 
 
 const Contacts = () => {
+   const BASE_URL = import.meta.env.BASE_URL;
+   const SPRITE_URL = `${BASE_URL}sprite.svg?v-2#`;
    return (
       <div className="contacts" id='contacts'>
          <div className="contacts__wrapper container">
@@ -19,7 +21,9 @@ const Contacts = () => {
 
                   <div className="contacts__phone"> <div className="contacts__icon-svg">
                      <svg className="icon icon-phone" width="40" height="40" fill="currentColor">
-                        <use href="/sprite.svg#icon-phone" />
+
+                        <use href={`${SPRITE_URL}icon-phone`} />
+
                      </svg>
                   </div>
                      <div className="contacts__phone-wrapper">
@@ -30,19 +34,20 @@ const Contacts = () => {
 
                   <div className="contacts__email"> <div className="contacts__icon-svg">
                      <svg className="icon icon-message" width="40" height="40" fill="currentColor">
-                        <use href="/sprite.svg#icon-message" />
+
+                        <use href={`${SPRITE_URL}icon-message`} />
                      </svg>
                   </div>
                      <div className="contacts__email-wrapper">
                         <p className="contacts__email-title" >E-mail:</p>
-                        <a className="contacts__email-text" href="mailto:mshasachenko1807@gmail.com">MashaSachenko1807@gmail.com</a>
+                        <a className="contacts__email-text" href="mailto:mshasachenko1807@gmail.com">mashasachenko.dev@gmail.com</a>
                      </div>
                   </div>
 
                   <div className="contacts__address">
                      <div className="contacts__icon-svg">
                         <svg className="icon icon-location" width="40" height="40" fill="currentColor">
-                           <use href="/sprite.svg#icon-location" />
+                           <use href={`${SPRITE_URL}icon-location`} />
                         </svg>
                      </div>
                      <div className="contacts__address-wrapper">

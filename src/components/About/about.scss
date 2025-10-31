@@ -14,7 +14,7 @@
       align-items: center;
       flex-direction: column-reverse;
       min-height: 100vh;
-      @include adaptiveValue("padding-block", 40, 20);
+      @include adaptiveValue("padding-block", 40, 70);
 
 
       @media (min-width: $mobile-rem) {

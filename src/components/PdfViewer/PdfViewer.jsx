@@ -8,7 +8,7 @@ import './pdfViewer.scss';
 const workerUrl = `/pdf.worker.js`;
 
 
-const PdfViewer = ({ fileUrl }) => {
+const PdfViewer = ({ fileUrl, workerUrl }) => {
 
    const renderCustomLoader = (tasks) => (
       <div className="pdf-custom-loader">
@@ -22,7 +22,7 @@ const PdfViewer = ({ fileUrl }) => {
             <Viewer
                fileUrl={fileUrl}
                renderLoader={renderCustomLoader}
-
+               workerUrl={workerUrl}
             />
          </div>
       </Worker>

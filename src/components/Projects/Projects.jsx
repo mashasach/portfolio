@@ -2,14 +2,16 @@ import React from 'react'
 import SectionTitle from '../SectionTitle/SectionTitle'
 import './projects.scss'
 import ProjectCard from './ProjectCard/ProjectCard'
-import project1 from "../../assets/images/project1.webp";
+import desire from "../../assets/images/desire.webp";
+import growfy from "../../assets/images/growfy.webp";
 import AnimatedOnScroll from '../AnimatedOnScroll/AnimatedOnScroll';
 
 export const Projects = () => {
    const myProjects = [
-      { projectDescription: 'Про проект, Про проект,Прот Про проект, Про проект,Про проект Про проект, Про проект,Про проект', img: project1 },
-      { projectDescription: 'Про проект, Про проект,Про проект', img: project1 },
-      { projectDescription: 'Про проект, Про проект,Про проект Про проект, Про проект,Про проект', img: project1 },
+      { projectTitle: 'Growfy', projectDescription: 'Single Page Application, React + Vite, з реалізацією багатосторінкової навігації через React Router.', img: growfy, link: 'https://mashasach.github.io/growfy/' },
+      { projectTitle: 'Desire', projectDescription: 'Багатосторінковий адаптивний сайт, створений за допомогою Gulp для автоматизації збірки, компіляції SASS та мініфікації коду.', img: desire, link: 'https://mashasach.github.io/furniture/' }
+
+
    ]
    return (
       <div className="projects" id='projects'>

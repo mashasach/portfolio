@@ -8,8 +8,12 @@
       display: grid;
       justify-content: center;
       position: relative;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-      gap: toRem(30);
+      grid-template-columns: minmax(250px, 500px) minmax(250px, 500px);
+      gap: toRem(50);
+
+      @media (max-width:$tablet-rem) {
+         grid-template-columns: minmax(250px, 500px);
+      }
 
    }
 

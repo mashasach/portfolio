@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import { useState, useEffect } from 'react';
 import classNames from 'classnames';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,16 +47,16 @@ const Header = () => {
                <nav className={classNames('header__menu', { 'header__menu--active': isMenuOpen })} >
                   <ul className='header__menu-list'>
                      <li className="header__menu-item">
-                        <a className="header__menu-link" href='#about' onClick={() => setIsMenuOpen(false)} >Про мене</a>
+                        <HashLink className="header__menu-link" to="/#about" onClick={() => setIsMenuOpen(false)} >Про мене</HashLink>
                      </li>
                      <li className="header__menu-item">
-                        <a className="header__menu-link" href='#skills' onClick={() => setIsMenuOpen(false)} >Навички</a>
+                        <HashLink className="header__menu-link" to="/#skills" onClick={() => setIsMenuOpen(false)} >Навички</HashLink>
                      </li>
                      <li className="header__menu-item">
-                        <a className="header__menu-link" href='#projects' onClick={() => setIsMenuOpen(false)} >Проекти</a>
+                        <HashLink className="header__menu-link" to="/#projects" onClick={() => setIsMenuOpen(false)} >Проекти</HashLink>
                      </li>
                      <li className="header__menu-item">
-                        <a className="header__menu-link" href='#contacts' onClick={() => setIsMenuOpen(false)} >Контакти</a>
+                        <HashLink className="header__menu-link" to="/#contacts" onClick={() => setIsMenuOpen(false)} >Контакти</HashLink>
                      </li>
 
                   </ul>

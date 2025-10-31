@@ -5,6 +5,8 @@ import "swiper/css";
 import './swiperSlider.scss';
 
 const SwiperSlider = ({ items }) => {
+   const BASE_URL = import.meta.env.BASE_URL;
+   const SPRITE_URL = `${BASE_URL}sprite.svg?v-2#`;
    return (
       <div className="slider-wrapper">
 
@@ -32,11 +34,13 @@ const SwiperSlider = ({ items }) => {
          </Swiper>
          <div className="custom-prev">
             <svg className="project__arrow" width="20" height="20" fill="currentColor">
-               <use href="/sprite.svg#icon-arrow-left" />
+               <use href={`${SPRITE_URL}icon-arrow-left`} />
             </svg></div>
          <div className="custom-next">
             <svg className="project__arrow" width="20" height="20" fill="currentColor">
-               <use href="/sprite.svg#icon-arrow-right" />
+
+               <use href={`${SPRITE_URL}icon-arrow-right`} />
+
             </svg></div>
       </div>
    )

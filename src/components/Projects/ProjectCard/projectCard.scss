@@ -4,13 +4,20 @@
 .project {
 
    &__card {
-      // max-width: toRem(300);
+      font-family: $font-text;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       transition: all 0.5s ease;
       cursor: pointer;
       overflow: hidden;
+      height: 100%;
+      gap: toRem(10);
+      border-radius: 20px;
+      @include adaptiveValue("padding", 22, 10);
+      box-shadow:
+         0 4px 6px rgba(0, 0, 0, 0.1),
+         0 1px 3px rgba(0, 0, 0, 0.08);
+
 
       &:hover {
          transform: translateY(-10px)
@@ -28,14 +35,19 @@
 
    }
 
-   &__description {
-      padding: toRem(10);
+   &__card-title {
 
+      font-weight: 600;
+
+   }
+
+   &__description {
+      flex: 1;
    }
 
    &__img {
       object-fit: cover;
-      aspect-ratio: 300 / 200;
+      aspect-ratio: 500 / 260;
       cursor: pointer;
       transition: all 0.5s ease;
 
@@ -45,7 +57,7 @@
       display: flex;
       justify-content: flex-end;
       cursor: pointer;
-      padding: toRem(10);
+
    }
 }
 
